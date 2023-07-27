@@ -1,0 +1,36 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.center{
+    display: flex;
+    justify-content: center
+}
+.flex{
+    display: flex;
+}
+.space{
+    margin-top: 30px;
+}
+.margin-bottom{
+    margin-bottom: 20px;
+}
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding:0;
+}
+body{
+    background-image: url(../pic/back.png);
+}
+.vertical-center{
+    align-items: center;
+}
+.text_center{
+    text-align: center;
+    text-align-last: center;
+}
+.white-font{
+    color: #ffffff;
+}

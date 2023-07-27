@@ -1,0 +1,190 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/crawl.css">
+    <title>crawl</title>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse no-margin center" id="navbar">
+        <div class="nav col-sm-10">
+            <ul class="nav ">
+                <div class="navbar-header">
+                    <a href="/" >
+                        <img src="/static/pic/LOGO.png" class="navbar-brand" id="nav" alt="图标">
+                    </a>
+                </div>
+                <div class="navbar-header center" style="position: relative;">
+                    <button class="navbar-brand btn" id="nav-btn" style="border: 0;background-color: #333333">
+                        捐赠
+                    </button>
+                    <div id="collect" style="display: none;">
+                        <img src="/static/pic/collect.jpg" alt="">
+                    </div>
+                </div>
+
+            </ul>
+
+        </div>
+    </div>
+    <div class="container" id="crawl-download" style="display: none;">
+        <div class="col-sm-10">
+            <div class="center margin-bottom">
+                <div class="col-sm-10 center">
+                    <div id="img-box"> </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="center col-sm-8">
+                    <div class="row col-sm-8">
+                        <div class="col-sm-6 center">
+                            <a href="/crawl/">
+                                <button id="back-btn" class="btn-primary btn ">我还要画</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 center" id="download">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="crawl-main">
+        <div class="container-fluid no-padding">
+            <img src="/static/pic/mode6.png" alt=" " class="img-responsive" id="styleimg" style="width:100%">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="row center">
+                    <div class="col-sm-10 ">
+                        <div class="center ">
+                            <div class="col-sm-10 center">
+                                <h4 class="white-font">选择头像风格</h4>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <div class="btn-group flex center-block no-padding" data-toggle="buttons" id="button-group1">
+                                <label class="btn btn-default" id="btn-label-1">
+                                    抽象
+                                    <input type="radio" name="options" id="option-1" value="2">
+                                </label>
+                                <label class="btn btn-default" id="btn-label-2">
+                                    柔和
+                                    <input type="radio" name="options" id="option-2" value="3" class="btn-primary">
+                                </label>
+                                <label class="btn btn-default" id="btn-label-3">
+                                    普通
+                                    <input type="radio" name="options" id="option-3" value="4" checked="checked" class="btn-primary">
+                                </label>
+                                <label class="btn btn-default" id="btn-label-4">
+                                    LoveLive
+                                    <input type="radio" name="options" id="option-4" value="6" class="btn-primary">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <div style="margin-top:2px;">
+                                <small class="white-font">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span> LoveLive风格属于测试功能</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row center">
+
+
+                <div class="col-sm-10 bg-light">
+                    <div class="row">
+                        <div class="center">
+                            <h4 class="white-font ">选择使用模型</h4>
+                        </div>
+                        <div class="center">
+                            <div class="col-sm-5" style="min-width:120px;">
+                                <select name="select-1" id="Models" class="input-sm form-control text_center">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="center">
+                            <div style="margin-top:2px;">
+                                <small class="white-font">
+                                    <span class="glyphicon glyphicon-info-sign white-font"></span>不同的模型会有不同的鬼畜</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row center">
+                        <div class="col-sm-8 form-inline">
+                            <div class="row ">
+                                <div class="col-sm-6 text-center " id="wei-tiao">
+                                    <h4 class="white-font">微调等级</h4>
+                                    <div class="row center no-margin">
+                                        <select name="select-2" id="feature-1" class="input-lg form-control text_center">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </div>
+                                    <div style="margin-top:2px;">
+                                        <small class="white-font">
+                                            <span class="glyphicon glyphicon-info-sign white-font"></span> 微调等级越大，生成的图片相似度越高</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 text-center ">
+                                    <h4 class="white-font">生成头像数量</h4>
+                                    <div class="row center no-margin">
+                                        <select name="select-3" id="feature-2" class="input-lg form-control text_center">
+                                            <option value="64">64</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="4">4</option>
+                                            <option value="8">8</option>
+                                            <option value="16">16</option>
+                                            <option value="32">32</option>
+                                        </select>
+                                    </div>
+                                    <div style="margin-top:2px;">
+                                        <small class="white-font">
+                                            <span class="glyphicon glyphicon-info-sign white-font"></span>最终合成一张图片,请自行截图OTZ</small>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="center row">
+                        <div class="btn">
+                            <button class="btn btn-lg btn-primary" id="sub-Btn">生成</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/crawl.js"></script>
+
+
+
+
+</body>
+
+</html>

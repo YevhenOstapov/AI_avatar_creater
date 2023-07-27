@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/static/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/201505091706/css/fileinput.min.css" rel="stylesheet">
+    <link href="/static/css/draw.css" rel="stylesheet">
+    <title>{{url_for("draw.proccess_Data")}}</title>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse no-margin center" id="navbar">
+        <div class="nav col-sm-10">
+            <ul class="nav ">
+                <div class="navbar-header">
+                    <a href="/" >
+                        <img src="/static/pic/LOGO.png" class="navbar-brand" id="nav" alt="图标">
+                    </a>
+                </div>
+                <div class="navbar-header center">
+                    <a href="/" class="navbar-brand" id="nav">
+                        捐赠
+                    </a>
+                </div>
+
+            </ul>
+
+        </div>
+    </div>
+    <div id="draw-main">
+        <div class="container-fluid no-padding">
+            <img src="/static/pic/style3.png" alt=" " class="img-responsive" id="styleimg" style="width:100%">
+        </div>
+        <div class="container">
+            <div class="center">
+                <h4 class="white-font" style="margin-bottom:0;">选择头像风格</h4>
+            </div>
+            <div class="center">
+                <div class="btn-group flex center-block no-padding " data-toggle="buttons" id="button-group1">
+                    <label class="btn btn-default" id="btn-label-1">
+                        星空
+                        <input type="radio" name="options" id="option-1" value="1">
+                    </label>
+                    <label class="btn btn-default" id="btn-label-2">
+                        日出印象
+                        <input type="radio" name="options" id="option-2" value="2" class="btn-primary">
+                    </label>
+                    <label class="btn btn-primary" id="btn-label-3">
+                        浮世绘
+                        <input type="radio" name="options" id="option-3" value="3" checked="checked" class="btn-primary">
+                    </label>
+                    <label class="btn btn-default" id="btn-label-4">
+                        马赛克
+                        <input type="radio" name="options" id="option-4" value="4" class="btn-primary">
+                    </label>
+                </div>
+            </div>
+            <div class="center">
+                <div style="margin-top:2px;">
+                    <small class="white-font">
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>随心所欲</small>
+                </div>
+            </div>
+            <div class="pic">
+                <div class="center margin-bottom">
+                    <div class="col-sm-6">
+                      <input id="file" type="file" name="file">
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="col-sm-8">
+                    <div class="col-sm-6 margin-bottom row">
+                        <div class="row center">
+                            <div class="col-sm-10 center">
+                                <h4 class="white-font">训练次数</h4>
+                            </div>
+                        </div>
+                        <div class="row  center">
+                            <div class="center" style="min-width:100px;">
+
+                                <select name="select-1" id="feature-1" class="input-lg form-control text_center">
+                                    <option value="200">200</option>
+                                    <option value="1">1</option>
+                                    <option value="10">10</option>
+                                    <option value="100">100</option>
+                                    <option value="300">300</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row center" style="margin-top:2px;">
+                            <small class="white-font">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span> 多多益善啦(当然时间也越长)，反正是我们服务器</small>
+                        </div>
+                    </div>
+
+                    <div class=" row col-sm-6 margin-bottom">
+                        <div class="row center">
+                            <div class="col-sm-10 center">
+                                <h4 class="white-font">风格等级</h4>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <div class="center" style="min-width:100px">
+                                <select name="select-2" id="feature-2" class="input-lg form-control text_center">
+                                    <option value="10000">10000</option>
+                                    <option value="100000">100000</option>
+                                    <option value="1000">1000</option>
+                                    <option value="100">100</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="row center" style="margin-top:2px;">
+                            <small class="white-font">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>等级越大，越有“风格”</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="btn col-sm-8">
+                    <button class="btn-primary btn btn-lg" id="sub-Btn">Draw</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center" id="draw-download" style="display: none;">
+        <div class="col-sm-8" style="margin-top:30px;">
+            <div class="center margin-bottom">
+                <div class="col-sm-10 center">
+                    <div id="img-box"> </div>
+                </div>
+            </div>
+            <div class="center ">
+                <div class="center col-sm-8">
+                    <div class="row col-sm-8">
+                        <div class="col-sm-6 center">
+                            <a href="/draw/">
+                                <button id="back-btn" class="btn-primary btn ">我还要画</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6 center" id="download">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/static/201505091706/js/fileinput.min.js"></script>
+    <script src="/static/js/draw.js"></script>
+
+
+    <div id="rememberry__extension__root" style="all: unset;"></div>
+</body>
+
+</html>
